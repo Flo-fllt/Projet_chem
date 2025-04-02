@@ -1,1 +1,2 @@
-# Projet_chem
+# Projet_chem 
+>The aim of this project is to take as input a molecule and through different packets, data-bases and functions. To give the retrosynthesis of that molecule, starting with the cheapest. 
