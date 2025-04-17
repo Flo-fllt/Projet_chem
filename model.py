@@ -1,3 +1,4 @@
+import joblib
 import pandas as pd
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
@@ -7,7 +8,7 @@ import numpy as np
 import re
 
 # Chargement des données
-file_path = r"C:\Users\flopi\projet_reaction_chimie\uspto50\uspto50\reaction_templates_50k_test.csv"
+file_path = "/Users/giuliogarotti/Documents/GitHub/Projet_chem/uspto50/uspto50/reaction_templates_50k_test.csv"
 df = pd.read_csv(file_path, sep="\t")
 
 # Sélectionner les colonnes nécessaires
@@ -111,8 +112,16 @@ X, y = prepare_fingerprints_for_training(df)
 # Entraîner ton modèle
 from sklearn.neural_network import MLPClassifier
 
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
 model = MLPClassifier(hidden_layer_sizes=(64, 64), max_iter=1000, random_state=42)
 model.fit(X, y)  # Entraîner le modèle
 
 print("Modèle entraîné avec succès")
 
+# Sauvegarder le modèle et le scaler
+joblib.dump(model, 'mlp_classifier_model.pkl')
+joblib.dump(scaler, 'scaler.pkl')
+print("Modèle sauvegardé dans 'mlp_classifier_model.pkl'")
+print("Scaler sauvegardé dans 'scaler.pkl'")
