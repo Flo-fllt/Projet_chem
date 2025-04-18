@@ -8,7 +8,7 @@ import numpy as np
 import re
 
 # Chargement des données
-file_path = "/Users/giuliogarotti/Documents/GitHub/Projet_chem/uspto50/uspto50/reaction_templates_50k_test.csv"
+file_path = "/Users/giuliogarotti/Documents/GitHub/Projet_chem/uspto50/uspto50/reaction_templates_50k_train.csv"
 df = pd.read_csv(file_path, sep="\t")
 
 # Sélectionner les colonnes nécessaires
