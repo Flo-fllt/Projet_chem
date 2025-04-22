@@ -11,7 +11,7 @@ model = joblib.load('mlp_classifier_model.pkl')
 scaler = joblib.load('scaler.pkl')
 
 # --- 2. Load your test data ---
-file_path = "/Users/giuliogarotti/Documents/GitHub/Projet_chem/uspto50/uspto50/reaction_templates_50k_test.csv"
+file_path = r"C:\Users\noah2\OneDrive\Documents\GitHub\Projet_chem\uspto50\uspto50\reaction_templates_50k_test.csv"
 df = pd.read_csv(file_path, sep="\t")
 
 # --- 3. Prepare the data (fixed version) ---
