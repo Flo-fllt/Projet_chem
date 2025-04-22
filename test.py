@@ -11,11 +11,7 @@ model = joblib.load('mlp_classifier_model.pkl')
 scaler = joblib.load('scaler.pkl')
 
 # --- 2. Load your test data ---
-<<<<<<< HEAD:test_model.py
-file_path = r"C:\Users\noah2\OneDrive\Documents\GitHub\Projet_chem\uspto50\uspto50\reaction_templates_50k_test.csv"
-=======
-file_path = "C:\Users\flopi\projet_reaction_chimie\uspto50\uspto50\reaction_templates_50k_test.csv"
->>>>>>> a991c5f (✨ Fix stratification bug + meilleure gestion des classes rares):test.py
+file_path = r"C:\Users\flopi\projet_reaction_chimie\uspto50\uspto50\reaction_templates_50k_test.csv"
 df = pd.read_csv(file_path, sep="\t")
 
 # --- 3. Prepare the data (fixed version) ---
