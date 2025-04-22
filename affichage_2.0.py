@@ -8,11 +8,25 @@ from rdkit import DataStructs
 from rdkit.Chem import AllChem, rdChemReactions
 from sklearn.preprocessing import StandardScaler
 from sklearn.neural_network import MLPClassifier
+from rdkit.Chem import Draw
+from rdkit.Chem.Draw import rdMolDraw2D
+from PIL import Image
+from io import BytesIO
+
+# --- High quality molecule drawing ---
+def mol_to_high_quality_image(mol, size=(300, 300)):
+    drawer = rdMolDraw2D.MolDraw2DCairo(size[0], size[1])
+    opts = drawer.drawOptions()
+    opts.bondLineWidth = 2.0
+    drawer.DrawMolecule(mol)
+    drawer.FinishDrawing()
+    png = drawer.GetDrawingText()
+    return Image.open(BytesIO(png))
 
 # --- Load model and data ---
 scaler = joblib.load('scaler.pkl')
 model = joblib.load('mlp_classifier_model.pkl')
-templates_df = pd.read_csv(r"C:\Users\noah2\OneDrive\Documents\GitHub\Projet_chem\uspto50\uspto50\reaction_templates_50k_test.csv", sep='\t')
+templates_df = pd.read_csv("/Users/giuliogarotti/Documents/GitHub/Projet_chem/uspto50/uspto50/reaction_templates_50k_train.csv", sep='\t')
 
 # --- Functions ---
 def smiles_to_fingerprint(smiles, radius=2, n_bits=2048):
@@ -76,8 +90,10 @@ if st.button("Run Retrosynthesis") and final_smiles:
     try:
         st.info("🔍 Predicting templates and generating precursors...")
         topk_predictions = predict_topk_templates(final_smiles, topk=50)
+        
         successful_predictions = []
-
+        seen_reactants = set()  # Track unique reactant sets
+        
         for rank, (template_hash, retro_template, prob) in enumerate(topk_predictions, start=1):
             if retro_template is None:
                 continue
@@ -85,7 +101,11 @@ if st.button("Run Retrosynthesis") and final_smiles:
             predicted_products = apply_template(retro_template, final_smiles)
 
             if predicted_products:
-                successful_predictions.append((template_hash, retro_template, prob, predicted_products))
+                for prod_set in predicted_products:
+                    canon_prod_set = tuple(sorted(prod_set))  # Canonical form
+                    if canon_prod_set not in seen_reactants:
+                        seen_reactants.add(canon_prod_set)
+                        successful_predictions.append((template_hash, retro_template, prob, [prod_set]))
 
         if successful_predictions:
             st.success("🎯 Successful Retrosynthesis Predictions:")
@@ -95,7 +115,13 @@ if st.button("Run Retrosynthesis") and final_smiles:
                     st.markdown(f"**Template SMARTS:** `{retro_template}`")
                     st.markdown("**Predicted Reactants:**")
                     for prod_set in products:
-                        st.markdown(f"- {' + '.join(prod_set)}")
+                        st.write("**Reactant Set:**")
+                        cols = st.columns(len(prod_set))
+                        for i, smiles in enumerate(prod_set):
+                            mol = Chem.MolFromSmiles(smiles)
+                            if mol:
+                                img = mol_to_high_quality_image(mol, size=(700, 700))
+                                cols[i].image(img, caption=smiles, use_container_width=True)
         else:
             st.error("❌ No valid templates produced reactants for this molecule.")
 
