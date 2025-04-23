@@ -5,15 +5,15 @@ import numpy as np
 import joblib
 from rdkit import Chem
 from rdkit import DataStructs
-from rdkit.Chem import AllChem, rdChemReactions
-from rdkit.Chem import Draw
+from rdkit.Chem import AllChem, rdChemReactions, Draw
 from rdkit.Chem.Draw import rdMolDraw2D
 from PIL import Image
 from io import BytesIO
+import base64
 
 # --- High quality molecule drawing ---
-def mol_to_high_quality_image(mol, size=(700, 700)):
-    drawer = rdMolDraw2D.MolDraw2DCairo(size[0], size[1])
+def mol_to_high_quality_image(mol, size=(800, 800)):
+    drawer = rdMolDraw2D.MolDraw2DCairo(*size)
     opts = drawer.drawOptions()
     opts.bondLineWidth = 2.0
     drawer.DrawMolecule(mol)
@@ -21,13 +21,25 @@ def mol_to_high_quality_image(mol, size=(700, 700)):
     png = drawer.GetDrawingText()
     return Image.open(BytesIO(png))
 
+# --- Display scaled image (visually smaller but full resolution) ---
+def st_scaled_image(image, width_display_px=200):
+    buffered = BytesIO()
+    image.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    html = f"""
+    <div style="display:inline-block;">
+        <img src="data:image/png;base64,{img_str}" style="width:{width_display_px}px; height:auto;" />
+    </div>
+    """
+    st.markdown(html, unsafe_allow_html=True)
+
 # --- Load model and data ---
 scaler = joblib.load("scaler.pkl")
 model = joblib.load("mlp_classifier_model.pkl")
 label_encoder = joblib.load("label_encoder.pkl")
 templates_df = pd.read_csv("/Users/giuliogarotti/Documents/GitHub/Projet_chem/uspto50/uspto50/combined_data.csv", sep="\t")
 
-# --- Functions ---
+# --- Helper functions ---
 def smiles_to_fingerprint(smiles, radius=2, n_bits=2048):
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
@@ -54,8 +66,7 @@ def apply_template(template_smarts, smiles_input):
         return []
 
 def predict_topk_templates(smiles_input, topk=50):
-    fingerprint = smiles_to_fingerprint(smiles_input)
-    fingerprint = fingerprint.reshape(1, -1)
+    fingerprint = smiles_to_fingerprint(smiles_input).reshape(1, -1)
     fingerprint_scaled = scaler.transform(fingerprint)
     probs = model.predict_proba(fingerprint_scaled)[0]
     topk_indices = np.argsort(probs)[::-1][:topk]
@@ -70,8 +81,9 @@ def predict_topk_templates(smiles_input, topk=50):
             predictions.append((template_hash, retro_template, prob))
     return predictions
 
-# --- Streamlit App ---
+# --- Streamlit UI ---
 st.title("🧪 RetroSynthesis Prediction Tool")
+
 with st.expander("1. Draw Molecule"):
     molecule = st.text_input("**Paste SMILES (optional)**")
     ketcher_smiles = st_ketcher(molecule, height=600)
@@ -96,21 +108,47 @@ if st.button("Run Retrosynthesis") and final_smiles:
                     seen_reactants.add(canon_prod_set)
                     successful_predictions.append((template_hash, retro_template, prob, prod_set))
 
-        if successful_predictions:
-            st.success("🎯 Successful Predictions:")
-            for idx, (template_hash, smarts, prob, reactants) in enumerate(successful_predictions, 1):
-                with st.expander(f"🔹 Prediction {idx} - {prob*100:.2f}% confidence"):
-                    st.markdown(f"**Template Hash:** `{template_hash}`")
-                    st.markdown(f"**Template SMARTS:** `{smarts}`")
-                    st.markdown("**Predicted Reactants:**")
+        total_prob = sum(prob for _, _, prob, _ in successful_predictions)
+        normalized_predictions = [
+            (template_hash, smarts, prob / total_prob, reactants)
+            for (template_hash, smarts, prob, reactants) in successful_predictions
+        ] if total_prob > 0 else []
+
+        if normalized_predictions:
+            st.markdown("### 🔹 Initial Predictions")
+            for idx, (template_hash, smarts, norm_prob, reactants) in enumerate(normalized_predictions, 1):
+                with st.expander(f"🧬 Prediction {idx} - {norm_prob * 100:.2f}% confidence"):
+                    st.markdown("**Reactants:**")
                     cols = st.columns(len(reactants))
                     for i, smi in enumerate(reactants):
                         mol = Chem.MolFromSmiles(smi)
                         if mol:
                             img = mol_to_high_quality_image(mol)
-                            cols[i].image(img, caption=smi, use_container_width=True)
+                            with cols[i]:
+                                st_scaled_image(img, width_display_px=300)
+
+                    # Step 2: Second-level only if one reactant
+                    if len(reactants) == 1:
+                        st.markdown("**↪️ Step 2 - Retrosynthesis Reactant:**")
+                        reactant = reactants[0]
+                        second_predictions = predict_topk_templates(reactant, topk=50)
+                        sub_found = False
+                        for t_hash, smarts2, p2 in second_predictions:
+                            reactant_products = apply_template(smarts2, reactant)
+                            if reactant_products:
+                                for rs in reactant_products:
+                                    if rs:
+                                        sub_found = True
+                                        subcols = st.columns(len(rs))
+                                        for j, smi2 in enumerate(rs):
+                                            mol2 = Chem.MolFromSmiles(smi2)
+                                            if mol2:
+                                                img2 = mol_to_high_quality_image(mol2)
+                                                with subcols[j]:
+                                                    st_scaled_image(img2, width_display_px=300)
+                        if not sub_found:
+                            st.markdown("- No further retrosynthesis found.")
         else:
             st.error("❌ No valid templates produced any reactants.")
-
     except Exception as e:
         st.error(f"⚠️ Error: {e}")
