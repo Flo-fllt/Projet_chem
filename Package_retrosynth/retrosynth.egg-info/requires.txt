@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy
+joblib
+rdkit
+scikit-learn
+matplotlib
+pillow
+streamlit-ketcher
