@@ -11,6 +11,8 @@ from PIL import Image
 from io import BytesIO
 import base64
 
+
+
 # --- High quality molecule drawing ---
 def mol_to_high_quality_image(mol, size=(800, 800)):
     drawer = rdMolDraw2D.MolDraw2DCairo(*size)
@@ -82,7 +84,9 @@ def predict_topk_templates(smiles_input, topk=50):
     return predictions
 
 # --- Streamlit UI ---
-st.title("🧪 RetroSynthesis Prediction Tool")
+with st.sidebar:
+    st.image("logo.png", width=1000)
+st.title("RetroSynthesis Prediction Tool")
 
 with st.expander("1. Draw Molecule"):
     molecule = st.text_input("**Paste SMILES (optional)**")
@@ -115,9 +119,9 @@ if st.button("Run Retrosynthesis") and final_smiles:
         ] if total_prob > 0 else []
 
         if normalized_predictions:
-            st.markdown("### 🔹 Initial Predictions")
+            st.markdown("### Retrosynthesis Predictions")
             for idx, (template_hash, smarts, norm_prob, reactants) in enumerate(normalized_predictions, 1):
-                with st.expander(f"🧬 Prediction {idx} - {norm_prob * 100:.2f}% confidence"):
+                with st.expander(f" Prediction {idx} - {norm_prob * 100:.2f}% confidence"):
                     st.markdown("**Reactants:**")
                     cols = st.columns(len(reactants))
                     for i, smi in enumerate(reactants):
@@ -129,7 +133,7 @@ if st.button("Run Retrosynthesis") and final_smiles:
 
                     # Step 2: Second-level only if one reactant
                     if len(reactants) == 1:
-                        st.markdown("**↪️ Step 2 - Retrosynthesis Reactant:**")
+                        st.markdown("**↪ Step 2 - Retrosynthesis :**")
                         reactant = reactants[0]
                         second_predictions = predict_topk_templates(reactant, topk=50)
                         sub_found = False
