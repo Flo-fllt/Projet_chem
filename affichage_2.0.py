@@ -94,7 +94,7 @@ with st.expander("1. Draw Molecule"):
 
 final_smiles = ketcher_smiles or molecule
 if final_smiles:
-    st.success(f"✅ SMILES: `{final_smiles}`")
+    st.success(f"✅ SMILES: {final_smiles}")
 
 if st.button("Run Retrosynthesis") and final_smiles:
     try:
@@ -131,26 +131,25 @@ if st.button("Run Retrosynthesis") and final_smiles:
                             with cols[i]:
                                 st_scaled_image(img, width_display_px=300)
 
-                    # Step 2: Second-level only if one reactant
+                                        # Step 2: Second-level only if one reactant
                     if len(reactants) == 1:
                         st.markdown("**↪ Step 2 - Retrosynthesis :**")
                         reactant = reactants[0]
                         second_predictions = predict_topk_templates(reactant, topk=50)
-                        sub_found = False
+
                         for t_hash, smarts2, p2 in second_predictions:
                             reactant_products = apply_template(smarts2, reactant)
                             if reactant_products:
-                                for rs in reactant_products:
-                                    if rs:
-                                        sub_found = True
-                                        subcols = st.columns(len(rs))
-                                        for j, smi2 in enumerate(rs):
-                                            mol2 = Chem.MolFromSmiles(smi2)
-                                            if mol2:
-                                                img2 = mol_to_high_quality_image(mol2)
-                                                with subcols[j]:
-                                                    st_scaled_image(img2, width_display_px=300)
-                        if not sub_found:
+                                rs = reactant_products[0]  # Only best valid one
+                                subcols = st.columns(len(rs))
+                                for j, smi2 in enumerate(rs):
+                                    mol2 = Chem.MolFromSmiles(smi2)
+                                    if mol2:
+                                        img2 = mol_to_high_quality_image(mol2)
+                                        with subcols[j]:
+                                            st_scaled_image(img2, width_display_px=300)
+                                break  # Stop after showing the first successful prediction
+                        else:
                             st.markdown("- No further retrosynthesis found.")
         else:
             st.error("❌ No valid templates produced any reactants.")
