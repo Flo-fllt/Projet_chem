@@ -65,6 +65,11 @@ def apply_template(template_smarts, smiles_input):
         return []
 
 def predict_topk_templates(smiles_input, topk=50):
+    scaler = joblib.load("scaler.pkl")
+    model = joblib.load("mlp_classifier_model.pkl")
+    label_encoder = joblib.load("label_encoder.pkl")
+    templates_df = pd.read_csv("/Users/giuliogarotti/Documents/GitHub/Projet_chem/uspto50/uspto50/combined_data.csv", sep="\t")
+    
     fingerprint = smiles_to_fingerprint(smiles_input).reshape(1, -1)
     fingerprint_scaled = scaler.transform(fingerprint)
     probs = model.predict_proba(fingerprint_scaled)[0]
