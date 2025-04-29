@@ -13,7 +13,8 @@ from rdkit.Chem.Draw import rdMolDraw2D
 from PIL import Image
 from io import BytesIO
 import base64
-
+import os
+import pandas as pd
 
 # --- High quality molecule drawing ---
 def mol_to_high_quality_image(mol, size=(800, 800)):
@@ -68,7 +69,14 @@ def predict_topk_templates(smiles_input, topk=50):
     scaler = joblib.load("scaler.pkl")
     model = joblib.load("mlp_classifier_model.pkl")
     label_encoder = joblib.load("label_encoder.pkl")
-    templates_df = pd.read_csv("/Users/giuliogarotti/Documents/GitHub/Projet_chem/uspto50/uspto50/combined_data.csv", sep="\t")
+    # Get the directory of the current file (affichage.py)
+    base_dir = os.path.dirname(__file__)
+
+# Build path to Data/combined_data.csv
+    csv_path = os.path.join(base_dir, "Data", "combined_data.csv")
+
+# Load the CSV
+    templates_df = pd.read_csv(csv_path, sep="\t")
     
     fingerprint = smiles_to_fingerprint(smiles_input).reshape(1, -1)
     fingerprint_scaled = scaler.transform(fingerprint)
