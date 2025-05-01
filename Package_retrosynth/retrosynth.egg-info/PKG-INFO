@@ -1,4 +1,4 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.2
 Name: retrosynth
 Version: 0.1.0
 Summary: Package pour la rétrosynthèse, visualisation et entraînement de modèles
@@ -13,3 +13,7 @@ Requires-Dist: scikit-learn
 Requires-Dist: matplotlib
 Requires-Dist: pillow
 Requires-Dist: streamlit-ketcher
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

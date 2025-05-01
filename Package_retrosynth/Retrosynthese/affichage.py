@@ -66,14 +66,19 @@ def apply_template(template_smarts, smiles_input):
         return []
 
 def predict_topk_templates(smiles_input, topk=50):
-    scaler = joblib.load("scaler.pkl")
-    model = joblib.load("mlp_classifier_model.pkl")
-    label_encoder = joblib.load("label_encoder.pkl")
-    # Get the directory of the current file (affichage.py)
-    base_dir = os.path.dirname(__file__)
+    # Get the root directory of the project
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-# Build path to Data/combined_data.csv
-    csv_path = os.path.join(base_dir, "Data", "combined_data.csv")
+    # === Load model components from Model/ ===
+    model_dir = os.path.join(root_dir, "Model")
+    scaler = joblib.load(os.path.join(model_dir, "scaler.pkl"))
+    model = joblib.load(os.path.join(model_dir, "mlp_classifier_model.pkl"))
+    label_encoder = joblib.load(os.path.join(model_dir, "label_encoder.pkl"))
+
+    # === Load template dataframe from Retrosynthese/Data/ ===
+    data_dir = os.path.join(root_dir, "package_retrosynth", "Retrosynthese", "Data")
+    csv_path = os.path.join(data_dir, "combined_data.csv")
+    templates_df = pd.read_csv(csv_path, sep="\t")
 
 # Load the CSV
     templates_df = pd.read_csv(csv_path, sep="\t")
