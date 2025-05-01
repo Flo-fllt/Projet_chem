@@ -1,2 +1,2 @@
 from .affichage import mol_to_high_quality_image, smiles_to_fingerprint, apply_template, predict_topk_templates
-from .training import remove_atom_mapping, split_rxn_smiles, smiles_to_fingerprints, mols_to_fps, prepare_fingerprints_for_training
+from .training import remove_atom_mapping, split_rxn_smiles, smiles_to_fingerprints, prepare_fingerprints_for_training
