@@ -16,10 +16,11 @@ import os
 # Add Package_retrosynth to Python path
 from Retrosynthese.affichage import mol_to_high_quality_image, st_scaled_image, smiles_to_fingerprint, apply_template, predict_topk_templates
 
-# --- Streamlit UI ---
+# --- Streamlit UI --- 
 with st.sidebar:
-    st.image("logo.png", width=1000)
+    st.image("images/logo.png", width=1000)
 st.title("RetroSynthesis Prediction Tool")
+
 
 with st.expander("1. Draw Molecule"):
     molecule = st.text_input("**Paste SMILES (optional)**")

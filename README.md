@@ -1,2 +1,1 @@
-# Projet_chem 
->The aim of this project is to take as input a molecule and through different packets, data-bases and functions. To give the retrosynthesis of that molecule, starting with the cheapest. 
+<img width="830" alt="logo" src=r"C:\Users\noah2\OneDrive\Documents\GitHub\Projet_chem\README.md">
