@@ -1,1 +1,2 @@
-<img width="830" alt="logo" src=r"C:\Users\noah2\OneDrive\Documents\GitHub\Projet_chem\README.md">
+<img width="830" alt="logo" src="https://github.com/Flo-fllt/Projet_chem/blob/main/Images/logo.png?raw=true">
+
