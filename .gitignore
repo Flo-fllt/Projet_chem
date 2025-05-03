@@ -1,0 +1,19 @@
+# Caches Python
+__pycache__/
+*.py[cod]
+
+# Fichiers temporaires d’installation
+*.egg-info/
+build/
+dist/
+
+# Notebooks temporaires ou checkpoints
+.ipynb_checkpoints/
+
+# Éditeurs
+.vscode/
+.DS_Store
+
+# Environnements virtuels
+venv/
+env/
