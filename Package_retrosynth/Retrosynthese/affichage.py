@@ -16,6 +16,32 @@ import base64
 import os
 import pandas as pd
 
+# --- Helper functions ---
+def smiles_to_fingerprint(smiles, radius=2, n_bits=2048):
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        raise ValueError("Invalid SMILES string")
+    fp = AllChem.GetMorganFingerprintAsBitVect(mol, radius, nBits=n_bits)
+    arr = np.zeros((1,), dtype=int)
+    DataStructs.ConvertToNumpyArray(fp, arr)
+    return arr
+
+def render_molecule(smiles):
+    mol = Chem.MolFromSmiles(smiles)
+    if mol:
+        return mol_to_high_quality_image(mol)
+    return None
+
+def image_to_base64(img, width=350):
+    buffer = BytesIO()
+    img.save(buffer, format="PNG")
+    encoded = base64.b64encode(buffer.getvalue()).decode("utf-8")
+    return f'''
+    <div style="display:inline-block; margin: 0 10px;">
+        <img src="data:image/png;base64,{encoded}" width="{width}px" />
+    </div>
+    '''
+
 # --- High quality molecule drawing ---
 def mol_to_high_quality_image(mol, size=(800, 800)):
     drawer = rdMolDraw2D.MolDraw2DCairo(*size)
@@ -26,7 +52,7 @@ def mol_to_high_quality_image(mol, size=(800, 800)):
     png = drawer.GetDrawingText()
     return Image.open(BytesIO(png))
 
-# --- Display scaled image (visually smaller but full resolution) ---
+# --- Display scaled image ---
 def st_scaled_image(image, width_display_px=200):
     buffered = BytesIO()
     image.save(buffered, format="PNG")
@@ -38,49 +64,44 @@ def st_scaled_image(image, width_display_px=200):
     """
     st.markdown(html, unsafe_allow_html=True)
 
+# --- Reaction scheme rendering ---
+def render_reaction_scheme(smiles_chain):
+    html_parts = []
 
-# --- Helper functions ---
-def smiles_to_fingerprint(smiles, radius=2, n_bits=2048):
-    mol = Chem.MolFromSmiles(smiles)
-    if mol is None:
-        raise ValueError("Invalid SMILES string")
-    fp = AllChem.GetMorganFingerprintAsBitVect(mol, radius, nBits=n_bits)
-    arr = np.zeros((1,), dtype=int)
-    DataStructs.ConvertToNumpyArray(fp, arr)
-    return arr
+    for i, smi_group in enumerate(smiles_chain):
+        mol_imgs = [render_molecule(smi) for smi in smi_group]
+        img_htmls = [image_to_base64(img, width=250) for img in mol_imgs if img]
+        html_parts.append(" + ".join(img_htmls))
+        if i < len(smiles_chain) - 1:
+            html_parts.append('<span style="font-size: 28px; font-weight: bold; margin: 0 12px;">→</span>')
 
-def apply_template(template_smarts, smiles_input):
-    mol = Chem.MolFromSmiles(smiles_input)
-    if mol is None:
-        return []
-    try:
-        rxn = rdChemReactions.ReactionFromSmarts(template_smarts)
-        products = rxn.RunReactants((mol,))
-        product_smiles = []
-        for prod_set in products:
-            prod_list = [Chem.MolToSmiles(p) for p in prod_set if p is not None]
-            if prod_list:
-                product_smiles.append(prod_list)
-        return product_smiles
-    except:
-        return []
+    full_html = "".join(html_parts)
 
+    # Wrap the full scheme in a flex container to keep it on one line
+    return f'''
+    <div style="display: flex; flex-wrap: nowrap; align-items: center; overflow-x: auto;">
+        {full_html}
+    </div>
+    '''
+
+
+# --- Prediction functions ---
 def predict_topk_templates(smiles_input, topk=50):
-    # Get the root directory of the project
+
     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-    # === Load model components from Model/ ===
+    # Load model components from Model/ ===
     model_dir = os.path.join(root_dir, "Model")
     scaler = joblib.load(os.path.join(model_dir, "scaler.pkl"))
     model = joblib.load(os.path.join(model_dir, "mlp_classifier_model.pkl"))
     label_encoder = joblib.load(os.path.join(model_dir, "label_encoder.pkl"))
 
-    # === Load template dataframe from Retrosynthese/Data/ ===
+    # Load template dataframe from Retrosynthese/Data/ ===
     data_dir = os.path.join(root_dir, "package_retrosynth", "Retrosynthese", "Data")
     csv_path = os.path.join(data_dir, "combined_data.csv")
     templates_df = pd.read_csv(csv_path, sep="\t")
 
-# Load the CSV
+    # Load the CSV
     templates_df = pd.read_csv(csv_path, sep="\t")
     
     fingerprint = smiles_to_fingerprint(smiles_input).reshape(1, -1)
@@ -97,3 +118,20 @@ def predict_topk_templates(smiles_input, topk=50):
             retro_template = row.iloc[0]['RetroTemplate']
             predictions.append((template_hash, retro_template, prob))
     return predictions
+
+def apply_template(template_smarts, smiles_input):
+    mol = Chem.MolFromSmiles(smiles_input)
+    if mol is None:
+        return []
+    try:
+        rxn = rdChemReactions.ReactionFromSmarts(template_smarts)
+        products = rxn.RunReactants((mol,))
+        product_smiles = []
+        for prod_set in products:
+            prod_list = [Chem.MolToSmiles(p) for p in prod_set if p is not None]
+            if prod_list:
+                product_smiles.append(prod_list)
+        return product_smiles
+    except:
+        return []
+    
