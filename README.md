@@ -15,3 +15,9 @@ Contributors:
 - Florian Follet, second year chemist at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Flo--fllt-181717.svg?style=flat&logo=github)](https://github.com/Flo-fllt)
 - Noah Paganzzi, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Noah--Paga-181717.svg?style=flat&logo=github)](https://github.com/Noah-Paga)
 - Jacques Maurice Grandjean, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-JacquesGrandjean-181717.svg?style=flat&logo=github)](https://github.com/JacquesGrandjean)
+## 📊 GitHub Stats
+
+- 👥 [Contributors](https://github.com/Flo-fllt/Projet_chem/graphs/contributors)
+- 📈 [Commit Activity](https://github.com/Flo-fllt/Projet_chem/graphs/commit-activity)
+- 📊 [Code Frequency](https://github.com/Flo-fllt/Projet_chem/graphs/code-frequency)
+- 🔁 [Pull Requests](https://github.com/Flo-fllt/Projet_chem/pulls)
