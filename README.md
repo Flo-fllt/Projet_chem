@@ -16,27 +16,6 @@ Contributors:
 - Noah Paganzzi, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Noah--Paga-181717.svg?style=flat&logo=github)](https://github.com/Noah-Paga)
 - Jacques Maurice Grandjean, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-JacquesGrandjean-181717.svg?style=flat&logo=github)](https://github.com/JacquesGrandjean)
 
-  import requests
-
-# Remplace avec ton nom d'utilisateur et le repo
-owner = "Flo-fllt"
-repo = "Projet_chem"
-
-# Si repo privé, ajoute un token GitHub perso avec les droits repo
-headers = {
-    "Authorization": "token ghp_0epWU6m791ql7WoxxMLg1jnEsOLvmtK4aUzWn"
-}
-
-url = f"https://api.github.com/repos/{owner}/{repo}/contributors"
-
-response = requests.get(url, headers=headers)
-
-if response.status_code == 200:
-    contributors = response.json()
-    for contributor in contributors:
-        print(f"{contributor['login']} ({contributor['contributions']} contributions) - {contributor['html_url']}")
-else:
-    print("Erreur d'accès :", response.status_code)
 
 ## 📊 GitHub Stats
 
