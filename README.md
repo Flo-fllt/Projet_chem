@@ -16,24 +16,11 @@ Contributors:
 - Noah Paganzzi, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Noah--Paga-181717.svg?style=flat&logo=github)](https://github.com/Noah-Paga)
 - Jacques Maurice Grandjean, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-JacquesGrandjean-181717.svg?style=flat&logo=github)](https://github.com/JacquesGrandjean)
 
+![Maintained](https://img.shields.io/badge/Maintained-Yes-green) ![Contributors](https://img.shields.io/badge/Contributors-4-blue) [![python3.10](https://img.shields.io/badge/Python-3.10-3776AB.svg?style=flat&logo=python&logoColor=orange)](https://www.python.org)
 
-## Maintained: Yes
+View contributors : [Contributors on GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/contributors)
 
-![Maintained](https://img.shields.io/badge/Maintained-Yes-green)
+View commit activity: [Commit activity on GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/commit-activity)
 
-## Contributeurs
-
-Les contributeurs de ce projet peuvent être consultés ici : [Contributeurs sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/contributors)
-
-## Activité des commits
-
-Vous pouvez consulter l'activité des commits de ce projet ici : [Activité des commits sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/commit-activity)
-
-## Fréquence du code
-
-Vous pouvez consulter la fréquence du code de ce projet ici : [Fréquence du code sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/code-frequency)
-
-## Nombre de Contributeurs
-
-![Contributors](https://img.shields.io/badge/Contributors-3-blue)
+View code frequency : [Fréquence du code sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/code-frequency)
 
