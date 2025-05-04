@@ -17,17 +17,23 @@ Contributors:
 - Jacques Maurice Grandjean, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-JacquesGrandjean-181717.svg?style=flat&logo=github)](https://github.com/JacquesGrandjean)
 
 
-## 📊 GitHub Stats
+## Maintained: Yes
+
+![Maintained](https://img.shields.io/badge/Maintained-Yes-green)
 
 ## Contributeurs
 
-Les contributeurs de ce projet peuvent être consultés ici : [Contributeurs sur GitHub](https://github.com/Flo-fllt/repository/graphs/contributors)
+Les contributeurs de ce projet peuvent être consultés ici : [Contributeurs sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/contributors)
 
 ## Activité des commits
 
-Vous pouvez consulter l'activité des commits de ce projet ici : [Activité des commits sur GitHub](https://github.com/Flo-fllt/repository/graphs/commit-activity)
+Vous pouvez consulter l'activité des commits de ce projet ici : [Activité des commits sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/commit-activity)
 
 ## Fréquence du code
 
-Vous pouvez consulter la fréquence du code de ce projet ici : [Fréquence du code sur GitHub](https://github.com/Flo-fllt/repository/graphs/code-frequency)
+Vous pouvez consulter la fréquence du code de ce projet ici : [Fréquence du code sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/code-frequency)
+
+## Nombre de Contributeurs
+
+![Contributors](https://img.shields.io/badge/Contributors-3-blue)
 
