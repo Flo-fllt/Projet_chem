@@ -6,9 +6,9 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?&style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/) 
 # -         Retro-chem       -
 
-## Packages 
+## 📦Package information
 RetroChem, is a one-step retrosynthesis engine, which essentially allows for a given molecule a prediction of the reactants needed to produce it. Developped as part of a project for the practical Programming in Chemistry course at EPFL (2025). 
-## Contributors
+### 👥 Contributors
 - Giulio Matteo Garotti, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Giulio--grt-181717.svg?style=flat&logo=github)](http://github.com/Giulio-grt)
 - Florian Follet, second year chemist at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Flo--fllt-181717.svg?style=flat&logo=github)](https://github.com/Flo-fllt)
 - Noah Paganzzi, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Noah--Paga-181717.svg?style=flat&logo=github)](https://github.com/Noah-Paga)
@@ -21,7 +21,7 @@ View contributors : [Contributors on GitHub](https://github.com/Flo-fllt/Projet_
 View commit activity: [Commit activity on GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/commit-activity)
 
 View code frequency : [Fréquence du code sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/code-frequency)
-## Retrosynthesis, what is it?
+### 🧪 Retrosynthesis, what is it?
 Organic retrosynthesis is a problem-solving technique used in organic chemistry to design a synthetic route for a target molecule by breaking it down into simpler precursor structures. This process, known as retrosynthetic analysis, helps chemists plan the step-by-step synthesis of complex organic compounds by working backward from the desired product.
 
 #### The approach involves two main stages:
@@ -43,3 +43,4 @@ The logic of retrosynthesis also lends itself well to computational chemistry. A
 The theoretical underpinning of retrosynthesis often involves mapping the retrosynthetic steps to known reaction mechanisms and using heuristics based on reactivity and selectivity. The goal is to find the shortest, most cost-effective, and most reliable pathway to the target compound.
 
 Let us now walk through how to apply retrosynthetic analysis to a real molecule using this framework!
+## 🛠️ How to install it
