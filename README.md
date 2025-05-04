@@ -19,7 +19,15 @@ Contributors:
 
 ## 📊 GitHub Stats
 
-- 👥 [Contributors](https://github.com/Flo-fllt/Projet_chem/graphs/contributors)
-- 📈 [Commit Activity](https://github.com/Flo-fllt/Projet_chem/graphs/commit-activity)
-- 📊 [Code Frequency](https://github.com/Flo-fllt/Projet_chem/graphs/code-frequency)
-- 🔁 [Pull Requests](https://github.com/Flo-fllt/Projet_chem/pulls)
+## Contributeurs
+
+Les contributeurs de ce projet peuvent être consultés ici : [Contributeurs sur GitHub](https://github.com/Flo-fllt/repository/graphs/contributors)
+
+## Activité des commits
+
+Vous pouvez consulter l'activité des commits de ce projet ici : [Activité des commits sur GitHub](https://github.com/Flo-fllt/repository/graphs/commit-activity)
+
+## Fréquence du code
+
+Vous pouvez consulter la fréquence du code de ce projet ici : [Fréquence du code sur GitHub](https://github.com/Flo-fllt/repository/graphs/code-frequency)
+
