@@ -4,7 +4,8 @@
 [![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=purple)](https://jupyter.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?&style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/) 
-# -         Retro-chem       -
+# -         Retro-chem       -                                                                                                                                                                                   
+#### Poject in practical programming in chemistry
 
 ## 📦Package information
 RetroChem, is a one-step retrosynthesis engine, which essentially allows for a given molecule a prediction of the reactants needed to produce it. Developped as part of a project for the practical Programming in Chemistry course at EPFL (2025). 
@@ -20,7 +21,7 @@ View contributors : [Contributors on GitHub](https://github.com/Flo-fllt/Projet_
 
 View commit activity: [Commit activity on GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/commit-activity)
 
-View code frequency : [Fréquence du code sur GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/code-frequency)
+View code frequency : [Code frequency on GitHub](https://github.com/Flo-fllt/Projet_chem/graphs/code-frequency)
 ### 🧪 Retrosynthesis, what is it?
 Organic retrosynthesis is a problem-solving technique used in organic chemistry to design a synthetic route for a target molecule by breaking it down into simpler precursor structures. This process, known as retrosynthetic analysis, helps chemists plan the step-by-step synthesis of complex organic compounds by working backward from the desired product.
 
