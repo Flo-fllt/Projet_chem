@@ -5,15 +5,16 @@
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=purple)](https://jupyter.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?&style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/) 
 # -         RetroChem       -                                                                                                                                                                                   
-#### Poject in practical programming in chemistry
 
 ## 📦Package information
 RetroChem, is a one-step retrosynthesis engine, which essentially allows for a given molecule a prediction of the reactants needed to produce it. Developped as part of a project for the practical Programming in Chemistry course at EPFL (2025). 
+
+[![EPFL Course](https://img.shields.io/badge/EPFL-red?style=for-the-badge)](https://edu.epfl.ch/coursebook/en/practical-programming-in-chemistry-CH-200)
 ### 👥 Contributors
-- Giulio Matteo Garotti, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Giulio--grt-181717.svg?style=flat&logo=github)](http://github.com/Giulio-grt)
-- Florian Follet, second year chemist at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Flo--fllt-181717.svg?style=flat&logo=github)](https://github.com/Flo-fllt)
-- Noah Paganzzi, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-Noah--Paga-181717.svg?style=flat&logo=github)](https://github.com/Noah-Paga)
-- Jacques Maurice Grandjean, second year chemical engineer at EPFL [![GitHub](https://img.shields.io/badge/GitHub-JacquesGrandjean-181717.svg?style=flat&logo=github)](https://github.com/JacquesGrandjean)
+- Giulio Matteo Garotti, second year chemical engineer at EPFL           [![GitHub](https://img.shields.io/badge/GitHub-Giulio--grt-181717.svg?style=flat&logo=github)](http://github.com/Giulio-grt)
+- Florian Follet, second year chemist at EPFL                            [![GitHub](https://img.shields.io/badge/GitHub-Flo--fllt-181717.svg?style=flat&logo=github)](https://github.com/Flo-fllt)
+- Noah Paganzzi, second year chemical engineer at EPFL                   [![GitHub](https://img.shields.io/badge/GitHub-Noah--Paga-181717.svg?style=flat&logo=github)](https://github.com/Noah-Paga)
+- Jacques Maurice Grandjean, second year chemical engineer at EPFL       [![GitHub](https://img.shields.io/badge/GitHub-JacquesGrandjean-181717.svg?style=flat&logo=github)](https://github.com/JacquesGrandjean)
 
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-green) ![Contributors](https://img.shields.io/badge/Contributors-4-blue) [![python3.10](https://img.shields.io/badge/Python-3.10-3776AB.svg?style=flat&logo=python&logoColor=orange)](https://www.python.org) [![LICENSE](https://img.shields.io/badge/License-MIT-purple.svg)](https://github.com/Flo-fllt/Projet_chem/blob/main/LICENSE.txt)
 
