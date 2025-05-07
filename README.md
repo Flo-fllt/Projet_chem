@@ -3,9 +3,16 @@
 # -         RetroChem       -                                                                                                                                                                                   
 
 ## 📦Package information
-RetroChem, is a one-step retrosynthesis engine python package, which essentially allows for a given molecule a prediction of the reactants needed to produce it. Developped as part of a project for the practical Programming in Chemistry at EPFL (2025). 
+RetroChem, is a one-step retrosynthesis engine python package, which is based on SMILES inputs. It includes tools for model training, template preprocessing, and visualization of reaction predictions. Developped as part of a project for the practical Programming in Chemistry at EPFL (2025). 
 
 [![EPFL Course](https://img.shields.io/badge/EPFL-red?style=for-the-badge)](https://edu.epfl.ch/coursebook/en/practical-programming-in-chemistry-CH-200)
+
+### Features
+
+- Clean SMILES strings by removing atom mappings
+- Train machine learning models (e.g. MLPClassifier)
+- Load and preprocess reaction template datasets
+- Visualize top predicted templates (Streamlit-compatible)
 
 ### 👥 Contributors
 - Giulio Matteo Garotti, second year chemical engineer at EPFL           [![GitHub](https://img.shields.io/badge/GitHub-Giulio--grt-181717.svg?style=flat&logo=github)](http://github.com/Giulio-grt)
@@ -48,3 +55,26 @@ The theoretical underpinning of retrosynthesis often involves mapping the retros
 
 Let us now walk through how to apply retrosynthetic analysis to a real molecule using this framework!
 ## 🛠️ How to install it
+
+Firstly it is advised to create a CONDA environment:
+```bash or terminal
+#Name the environment as you wish
+conda create -n env.name #name the environment as you wish
+#Activate your environment
+conda activate env.name
+````
+Clone this repository and install the package locally:
+
+```bash or terminal
+#Clone the repository
+git clone https://github.com/Flo-fllt/Projet_chem.git
+
+#naviguate to the package folder
+cd Projet_chem/Package_retrosynth
+
+#Install the package locally in editable mode
+pip install -e .
+
+#This will install the retrosynth package on your machine. You can now import and use its functions anywhere in your Python environment:
+from retrosynthese.training import train_model
+from retrosynthese.affichage import remove_atom_mapping
