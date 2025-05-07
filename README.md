@@ -7,7 +7,7 @@ RetroChem, is a one-step retrosynthesis engine python package, which is based on
 
 [![EPFL Course](https://img.shields.io/badge/EPFL-red?style=for-the-badge)](https://edu.epfl.ch/coursebook/en/practical-programming-in-chemistry-CH-200)
 
-### Features
+### 🪄 Features
 
 - Clean SMILES strings by removing atom mappings
 - Train machine learning models (e.g. MLPClassifier)
@@ -32,6 +32,8 @@ View code frequency : [Code frequency on GitHub](https://github.com/Flo-fllt/Pro
 [![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=purple)](https://jupyter.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?&style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/) 
+[![Anaconda](https://img.shields.io/badge/Anaconda-44A833.svg?&style=for-the-badge&logo=anaconda&logoColor=white)](https://www.anaconda.com/)
+
 ### 🧪 Retrosynthesis, what is it?
 Organic retrosynthesis is a problem-solving technique used in organic chemistry to design a synthetic route for a target molecule by breaking it down into simpler precursor structures. This process, known as retrosynthetic analysis, helps chemists plan the step-by-step synthesis of complex organic compounds by working backward from the desired product.
 
@@ -76,10 +78,11 @@ git clone https://github.com/Flo-fllt/RetroChem.git
 #Naviguate to the package folder
 cd Projet_chem/Package_retrosynth
 
-#Install the package locally in editable mode
+#Install the package locally in editable mode, make sure to activate your environment before doing so
 pip install -e .
 
 #This will install the retrosynth package on your machine. You can now import and use its functions anywhere in your Python environment:
 from retrosynthese.training import train_model
 from retrosynthese.affichage import remove_atom_mapping
 ````
+This will automatically install all the requirements and functions needed to run the code.
