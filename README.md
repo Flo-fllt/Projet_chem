@@ -59,9 +59,13 @@ Let us now walk through how to apply retrosynthetic analysis to a real molecule 
 Firstly it is advised to create a CONDA environment:
 ```bash or terminal
 #Name the environment as you wish
-conda create -n env.name #name the environment as you wish
+conda create -n env.name
+
 #Activate your environment
 conda activate env.name
+
+#Alternative way of activating it
+source activate env.name
 ````
 Clone this repository and install the package locally:
 
@@ -69,7 +73,7 @@ Clone this repository and install the package locally:
 #Clone the repository
 git clone https://github.com/Flo-fllt/Projet_chem.git
 
-#naviguate to the package folder
+#Naviguate to the package folder
 cd Projet_chem/Package_retrosynth
 
 #Install the package locally in editable mode
@@ -78,3 +82,4 @@ pip install -e .
 #This will install the retrosynth package on your machine. You can now import and use its functions anywhere in your Python environment:
 from retrosynthese.training import train_model
 from retrosynthese.affichage import remove_atom_mapping
+````
