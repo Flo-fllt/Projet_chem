@@ -97,7 +97,7 @@ def predict_topk_templates(smiles_input, topk=50):
     label_encoder = joblib.load(os.path.join(model_dir, "label_encoder.pkl"))
 
     # Load template dataframe from Retrosynthese/Data/ ===
-    data_dir = os.path.join(root_dir, "package_retrosynth", "Retrosynthese", "Data")
+    data_dir = os.path.join(root_dir, "package_retrosynth", "Data")
     csv_path = os.path.join(data_dir, "combined_data.csv")
     templates_df = pd.read_csv(csv_path, sep="\t")
 
