@@ -71,7 +71,7 @@ Clone this repository and install the package locally:
 
 ```bash or terminal
 #Clone the repository
-git clone https://github.com/Flo-fllt/Projet_chem.git
+git clone https://github.com/Flo-fllt/RetroChem.git
 
 #Naviguate to the package folder
 cd Projet_chem/Package_retrosynth
