@@ -56,10 +56,11 @@ The logic of retrosynthesis also lends itself well to computational chemistry. A
 The theoretical underpinning of retrosynthesis often involves mapping the retrosynthetic steps to known reaction mechanisms and using heuristics based on reactivity and selectivity. The goal is to find the shortest, most cost-effective, and most reliable pathway to the target compound.
 
 Let us now walk through how to apply retrosynthetic analysis to a real molecule using this framework!
-## 🛠️ How to install it
+## 🕹️ How to install it
 
 Firstly it is advised to create a CONDA environment:
 ```bash or terminal
+#Open bash or terminal
 #Name the environment as you wish
 conda create -n env.name
 
