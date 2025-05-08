@@ -69,8 +69,7 @@ def prepare_fingerprints_for_training(df):
     print("Début du traitement des données.")
     
     for idx, (smiles, target) in enumerate(zip(df['RxnSmilesClean'], df['TemplateHash'])):
-        # Affichage des premières lignes pour vérifier les données
-        if idx < 5:  # Afficher seulement les 5 premières lignes pour déboguer
+        if idx < 5:  
             print(f"Index {idx} - SMILES: {smiles} | Target: {target}")
         
         reactants_fps, products_fps = smiles_to_fingerprints(smiles)
