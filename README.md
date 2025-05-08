@@ -83,7 +83,7 @@ cd Projet_chem/Package_retrosynth
 pip install -e .
 
 #This will install the retrosynth package on your machine. You can now import and use its functions anywhere in your Python environment:
-from retrosynthese.training import train_model
-from retrosynthese.affichage import remove_atom_mapping
+from Package_functions.Model_training_functions import prepare_fingerprints_for_training
+from Package_functions.Interface_functions import (mol_to_high_quality_image, st_scaled_image, apply_template, predict_topk_templates, render_reaction_scheme)
 ````
 This will automatically install all the requirements and functions needed to run the code.
