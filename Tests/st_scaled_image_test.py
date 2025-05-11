@@ -1,22 +1,8 @@
-# file: st_scaled_image_test.py
-
 import unittest
 from PIL import Image
-from io import BytesIO
-import base64
-import streamlit as st
 
-# Function under test
-def st_scaled_image(image, width_display_px=200):
-    buffered = BytesIO()
-    image.save(buffered, format="PNG")
-    img_str = base64.b64encode(buffered.getvalue()).decode()
-    html = f"""
-    <div style="display:inline-block;">
-        <img src="data:image/png;base64,{img_str}" style="width:{width_display_px}px; height:auto;" />
-    </div>
-    """
-    st.markdown(html, unsafe_allow_html=True)
+#import function under test 
+from Package_functions.Interface_functions import st_scaled_image
 
 class TestStScaledImage(unittest.TestCase):
     def test_valid_image_display(self):

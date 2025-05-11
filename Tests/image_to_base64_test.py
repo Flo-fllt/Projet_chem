@@ -1,20 +1,8 @@
-# file: test_image_to_base64.py
-
 import unittest
 from PIL import Image
-from io import BytesIO
-import base64
 
-# Function under test
-def image_to_base64(img, width=350):
-    buffer = BytesIO()
-    img.save(buffer, format="PNG")
-    encoded = base64.b64encode(buffer.getvalue()).decode("utf-8")
-    return f'''
-    <div style="display:inline-block; margin: 0 10px;">
-        <img src="data:image/png;base64,{encoded}" width="{width}px" />
-    </div>
-    '''
+# Import Function under test
+from Package_functions.Interface_functions import image_to_base64
 
 class TestImageToBase64(unittest.TestCase):
     def test_valid_image(self):

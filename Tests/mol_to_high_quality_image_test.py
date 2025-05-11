@@ -1,20 +1,9 @@
-# file: mol_to_high_quality_image_test.py
-
 import unittest
 from rdkit import Chem
-from rdkit.Chem.Draw import rdMolDraw2D
 from PIL import Image
-from io import BytesIO
 
-# Function under test
-def mol_to_high_quality_image(mol, size=(800, 800)):
-    drawer = rdMolDraw2D.MolDraw2DCairo(*size)
-    opts = drawer.drawOptions()
-    opts.bondLineWidth = 2.0
-    drawer.DrawMolecule(mol)
-    drawer.FinishDrawing()
-    png = drawer.GetDrawingText()
-    return Image.open(BytesIO(png))
+# Import function under test
+from Package_functions.Interface_functions import mol_to_high_quality_image
 
 class TestMolToHighQualityImage(unittest.TestCase):
     def test_image_output(self):

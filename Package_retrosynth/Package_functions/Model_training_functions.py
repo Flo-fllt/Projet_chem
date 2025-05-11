@@ -66,7 +66,7 @@ def prepare_fingerprints_for_training(df):
     X = []
     y = []
     
-    print("Début du traitement des données.")
+    print("Start of data processing.")
     
     for idx, (smiles, target) in enumerate(zip(df['RxnSmilesClean'], df['TemplateHash'])):
         if idx < 5:  

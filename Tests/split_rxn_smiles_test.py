@@ -1,20 +1,7 @@
-# file: split_rxn_smiles_test.py
-
 import unittest
 
-# Function under test
-def split_rxn_smiles(rxn_smiles):
-    try:
-        parts = rxn_smiles.split(">>")
-        if len(parts) != 2:
-            return [], []
-        reactants_raw, products_raw = parts
-        reactants = reactants_raw.split(".")
-        products = products_raw.split(".")
-        return reactants, products
-    except Exception as e:
-        print(f"Erreur dans split_rxn_smiles: {rxn_smiles} -> {e}")
-        return [], []
+# Import Function under test
+from Package_functions.Model_training_functions import split_rxn_smiles
 
 class TestSplitRxnSmiles(unittest.TestCase):
     def test_valid_reaction(self):

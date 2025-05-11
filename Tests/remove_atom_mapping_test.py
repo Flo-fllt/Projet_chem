@@ -1,12 +1,7 @@
-# file: remove_atom_mapping_test.py
-
 import unittest
-import re
 
 # Function under test
-def remove_atom_mapping(smiles):
-    """Remove :number mapping from SMILES."""
-    return re.sub(r":\d+", "", smiles)
+from Package_functions.Model_training_functions import remove_atom_mapping
 
 class TestRemoveAtomMapping(unittest.TestCase):
     def test_removes_atom_mappings(self):
