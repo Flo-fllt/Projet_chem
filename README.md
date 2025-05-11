@@ -2,7 +2,7 @@
 
 # -         RetroChem       -                                                                                                                                                                                   
 
-## 📦Package information
+## Package information
 RetroChem, is a one-step retrosynthesis engine python package, which is based on SMILES inputs. It includes tools for model training, template preprocessing, and visualization of reaction predictions. Developped as part of a project for the practical Programming in Chemistry at EPFL (2025). 
 
 [![EPFL Course](https://img.shields.io/badge/EPFL-red?style=for-the-badge)](https://edu.epfl.ch/coursebook/en/practical-programming-in-chemistry-CH-200)
