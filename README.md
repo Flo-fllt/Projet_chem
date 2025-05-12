@@ -9,10 +9,10 @@ RetroChem, is a one-step retrosynthesis engine python package, which is based on
 
 ### 🪄 Features
 
-- Clean SMILES strings by removing atom mappings
-- Train machine learning models (e.g. MLPClassifier)
-- Load and preprocess reaction template datasets
-- Visualize top predicted templates (Streamlit-compatible)
+- Draw molecules or use molecule name (eg. paracetamol)
+- Works well for known molecules (eg. GHB, EDTA and etc)
+- Gives clean structures with reaction steps
+- Gives the predictions in order of cofidence
 
 ### 👥 Contributors
 - Giulio Matteo Garotti, second year chemical engineer at EPFL           [![GitHub](https://img.shields.io/badge/GitHub-Giulio--grt-181717.svg?style=flat&logo=github)](http://github.com/Giulio-grt)
