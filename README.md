@@ -35,6 +35,9 @@ View code frequency : [Code frequency on GitHub](https://github.com/Flo-fllt/Pro
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?&style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/) 
 [![Anaconda](https://img.shields.io/badge/Anaconda-44A833.svg?&style=for-the-badge&logo=anaconda&logoColor=white)](https://www.anaconda.com/)
 
+[![Made_with_python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+
 ### 🧪 Retrosynthesis, what is it?
 Organic retrosynthesis is a problem-solving technique used in organic chemistry to design a synthetic route for a target molecule by breaking it down into simpler precursor structures. This process, known as retrosynthetic analysis, helps chemists plan the step-by-step synthesis of complex organic compounds by working backward from the desired product.
 
