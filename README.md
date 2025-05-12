@@ -9,10 +9,11 @@ RetroChem, is a one-step retrosynthesis engine pip installable python package, w
 
 ### 🪄 Features
 
-- Draw molecules or use molecule name (eg. paracetamol)
-- Works well for known molecules (eg. GHB, EDTA and etc)
-- Predicts possible reactants and reaction steps 
-- Gives clean structures with reaction steps
+- Simple to use retrosynthesis engine. 
+- Draw molecules or use molecule name (eg. paracetamol).
+- Gives clean and chemically correct molecules.
+- Works well for known molecules (eg. GHB, EDTA and etc).
+- Predicts possible reactants and reaction steps.
 - Gives the predictions in order of confidence
 
 ### 👥 Contributors
@@ -119,3 +120,8 @@ If the program has a difficult time finding reactnts, try another molecule and e
 <img width="800" alt="interface guide 3" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%203.png?raw=true">
 
 <img width="800" alt="interface guide 4" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%204.png?raw=true">
+
+## 📚 Want more information?
+
+Here is the link to the report of the project, logging detailed information regarding the functions and data used to efficiently run this program. [![Jupyter Notebook](https://img.shields.io/badge/Jupyter_Notebook-orange.svg)](https://github.com/Flo-fllt/RetroChem/blob/main/Notebook/project_report.ipynb)
+
