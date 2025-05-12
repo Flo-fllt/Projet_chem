@@ -1,10 +1,17 @@
 from setuptools import setup, find_packages
+from pathlib import Path
+
+# Lire le contenu de ton README
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="RetroChem",
-    version="0.1.0",
+    version="0.1.1",
     author="Jacques Grandjean, Noah Paganuzzi, Florian Follet, Giulio Garotti",
-    description="Outil de rétrosynthèse, visualisation et machine learning",
+    description="Retrosynthesis, visualization and machine learning tools",
+    long_description=long_description,
+    long_description_content_type="text/markdown", 
     packages=find_packages(include=["Package_retrosynth", "Package_retrosynth.*"]),
     py_modules=["retrochem_launcher"],  # pour la commande CLI
     include_package_data=True,          # pour inclure les fichiers non-Python
