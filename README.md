@@ -94,3 +94,4 @@ This will automatically install all the requirements and functions needed to run
 
 <img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
 
+
