@@ -11,8 +11,9 @@ RetroChem, is a one-step retrosynthesis engine python package, which is based on
 
 - Draw molecules or use molecule name (eg. paracetamol)
 - Works well for known molecules (eg. GHB, EDTA and etc)
+- Predicts possible reactants and reaction steps 
 - Gives clean structures with reaction steps
-- Gives the predictions in order of cofidence
+- Gives the predictions in order of confidence
 
 ### 👥 Contributors
 - Giulio Matteo Garotti, second year chemical engineer at EPFL           [![GitHub](https://img.shields.io/badge/GitHub-Giulio--grt-181717.svg?style=flat&logo=github)](http://github.com/Giulio-grt)
