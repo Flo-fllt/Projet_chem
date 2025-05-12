@@ -2,7 +2,7 @@
 
 # -         RetroChem       -                                                                                                                                                                                   
 
-## Package information
+## 📜 Package information
 RetroChem, is a one-step retrosynthesis engine pip installable python package, which is based on SMILES inputs. It includes tools for model training, template preprocessing, and visualization of reaction predictions. Developped as part of a project for the practical Programming in Chemistry at EPFL (2025). 
 
 [![EPFL Course](https://img.shields.io/badge/EPFL-red?style=for-the-badge)](https://edu.epfl.ch/coursebook/en/practical-programming-in-chemistry-CH-200)
@@ -38,7 +38,7 @@ View code frequency : [Code frequency on GitHub](https://github.com/Flo-fllt/Pro
 [![Made_with_python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 
-### 🧪 Retrosynthesis, what is it?
+### 🔍 Retrosynthesis, what is it?
 Organic retrosynthesis is a problem-solving technique used in organic chemistry to design a synthetic route for a target molecule by breaking it down into simpler precursor structures. This process, known as retrosynthetic analysis, helps chemists plan the step-by-step synthesis of complex organic compounds by working backward from the desired product.
 
 #### The approach involves two main stages:
