@@ -90,7 +90,7 @@ pip install retrochem
 retrochem
 ````
 This will automatically install all the requirements and functions needed to run the code.
-## 💡 Requiremtns
+## 💡 Requirements
 ````
 python>=3.10
 streamlit
