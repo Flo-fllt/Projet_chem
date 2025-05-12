@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from streamlit_ketcher import st_ketcher
 from rdkit import Chem
-from Package_functions.Interface_functions import (mol_to_high_quality_image, st_scaled_image, apply_template, predict_topk_templates, render_reaction_scheme)
+from Package_retrosynth.Package_functions.Interface_functions import (mol_to_high_quality_image, st_scaled_image, apply_template, predict_topk_templates, render_reaction_scheme)
 
 # --- Sidebar ---
 with st.sidebar:
