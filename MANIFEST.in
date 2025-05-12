@@ -2,5 +2,6 @@ include README.md
 include LICENSE
 recursive-include .streamlit *
 recursive-include Images *
-recursive-include Model *
 recursive-include Package_retrosynth *.py
+recursive-include Package_retrosynth/Model *.pkl
+recursive-include Package_retrosynth/Data *.csv

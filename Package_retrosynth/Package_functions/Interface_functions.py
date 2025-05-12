@@ -15,6 +15,12 @@ from io import BytesIO
 import base64
 import os
 import pandas as pd
+import importlib.resources as pkg_resources
+from pathlib import Path
+import io
+import Package_retrosynth.Model as model_pkg
+import Package_retrosynth.Data as data_pkg
+
 
 # --- Helper functions ---
 def smiles_to_fingerprint(smiles, radius=2, n_bits=2048):
@@ -88,21 +94,18 @@ def render_reaction_scheme(smiles_chain):
 # --- Prediction functions ---
 def predict_topk_templates(smiles_input, topk=50):
 
-    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    # --- Load model components from Package_retrosynth/Model/ ---
+    with pkg_resources.files(model_pkg).joinpath("scaler.pkl").open("rb") as f:
+        scaler = joblib.load(f)
+    with pkg_resources.files(model_pkg).joinpath("mlp_classifier_model.pkl").open("rb") as f:
+        model = joblib.load(f)
+    with pkg_resources.files(model_pkg).joinpath("label_encoder.pkl").open("rb") as f:
+        label_encoder = joblib.load(f)
 
-    # Load model components from Model/ ===
-    model_dir = os.path.join(root_dir, "Model")
-    scaler = joblib.load(os.path.join(model_dir, "scaler.pkl"))
-    model = joblib.load(os.path.join(model_dir, "mlp_classifier_model.pkl"))
-    label_encoder = joblib.load(os.path.join(model_dir, "label_encoder.pkl"))
 
-    # Load template dataframe from Retrosynthese/Data/ ===
-    data_dir = os.path.join(root_dir, "package_retrosynth", "Data")
-    csv_path = os.path.join(data_dir, "combined_data.csv")
-    templates_df = pd.read_csv(csv_path, sep="\t")
-
-    # Load the CSV
-    templates_df = pd.read_csv(csv_path, sep="\t")
+    # --- Load CSV from Package_retrosynth/Data/ ---
+    with pkg_resources.files(data_pkg).joinpath("combined_data.csv").open("r", encoding="utf-8") as f:
+        templates_df = pd.read_csv(f, sep="\t")
     
     fingerprint = smiles_to_fingerprint(smiles_input).reshape(1, -1)
     fingerprint_scaled = scaler.transform(fingerprint)
