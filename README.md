@@ -62,9 +62,9 @@ The theoretical underpinning of retrosynthesis often involves mapping the retros
 
 Let us now walk through how to apply retrosynthetic analysis to a real molecule using this framework!
 ## 🕹️ How to install it
-For futher information regarding this package, the PYPI page can be consulted:
+PYPI page of the RetroChem package:
 
-[![Thomas2](https://img.shields.io/badge/pypi-3775A9?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/RetroChem/)
+[![RetroChem.PYPI](https://img.shields.io/badge/pypi-3775A9?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/RetroChem/)
 
 Firstly it is advised to create a CONDA environment:
 ```bash or terminal
