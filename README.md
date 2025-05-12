@@ -87,6 +87,18 @@ pip install retrochem
 retrochem
 ````
 This will automatically install all the requirements and functions needed to run the code.
+## 💡 Requiremtns
+````
+streamlit
+pandas
+numpy
+joblib
+rdkit
+scikit-learn
+matplotlib
+pillow
+streamlit-ketcher
+````
 
 ## 💻 Guide
 Once the RetroChem web page is open the retrosynthesis engine is ready to run!
