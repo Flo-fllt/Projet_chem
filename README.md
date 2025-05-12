@@ -77,20 +77,23 @@ Clone this repository and install the package locally:
 #Clone the repository
 git clone https://github.com/Flo-fllt/RetroChem.git
 
-#Naviguate to the package folder
-cd Projet_chem/Package_retrosynth
+#Naviguate to the RetroChem folder
+cd RetroChem
 
 #Install the package locally in editable mode, make sure to activate your environment before doing so
-pip install -e .
+pip install retrochem
 
-#This will install the retrosynth package on your machine. You can now import and use its functions anywhere in your Python environment:
-from Package_functions.Model_training_functions import prepare_fingerprints_for_training
-from Package_functions.Interface_functions import (mol_to_high_quality_image, st_scaled_image, apply_template, predict_topk_templates, render_reaction_scheme)
+#This will install the retrosynth package on your machine. You can then run the program by running.
+retrochem
 ````
 This will automatically install all the requirements and functions needed to run the code.
 
 ## Guide
+Once the RetroChem web page is open the retrosynthesis engine is ready to run!
 <img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%201.png?raw=true">
 
+If the program has a difficult time finding reactnts, try another molecule and especially known molecules.
 <img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
+ 
+<img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%203.png?raw=true">
 
