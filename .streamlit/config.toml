@@ -5,6 +5,3 @@ backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#f0f0f0"
 textColor = "#1e1e1e"
 font = "sans serif"
-
-[ui]
-hideStreamlitMark = true

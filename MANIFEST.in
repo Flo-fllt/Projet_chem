@@ -1,0 +1,4 @@
+include .streamlit/config.toml
+recursive-include Images *
+recursive-include Model *
+recursive-include Scripts *
