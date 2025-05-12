@@ -92,6 +92,7 @@ retrochem
 This will automatically install all the requirements and functions needed to run the code.
 ## 💡 Requiremtns
 ````
+python>=3.10
 streamlit
 pandas
 numpy
