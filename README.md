@@ -3,7 +3,7 @@
 # -         RetroChem       -                                                                                                                                                                                   
 
 ## Package information
-RetroChem, is a one-step retrosynthesis engine python package, which is based on SMILES inputs. It includes tools for model training, template preprocessing, and visualization of reaction predictions. Developped as part of a project for the practical Programming in Chemistry at EPFL (2025). 
+RetroChem, is a one-step retrosynthesis engine pip installable python package, which is based on SMILES inputs. It includes tools for model training, template preprocessing, and visualization of reaction predictions. Developped as part of a project for the practical Programming in Chemistry at EPFL (2025). 
 
 [![EPFL Course](https://img.shields.io/badge/EPFL-red?style=for-the-badge)](https://edu.epfl.ch/coursebook/en/practical-programming-in-chemistry-CH-200)
 
@@ -71,7 +71,7 @@ conda activate env.name
 #Alternative way of activating it
 source activate env.name
 ````
-Clone this repository and install the package locally:
+Clone this repository and install the python package locally:
 
 ```bash or terminal
 #Clone the repository
@@ -83,20 +83,20 @@ cd RetroChem
 #Install the package locally in editable mode, make sure to activate your environment before doing so
 pip install retrochem
 
-#This will install the retrosynth package on your machine. You can then run the program by running.
+#This will install the retrosynth package on your machine. You can then run the program by running:
 retrochem
 ````
 This will automatically install all the requirements and functions needed to run the code.
 
-## Guide
+## 💻 Guide
 Once the RetroChem web page is open the retrosynthesis engine is ready to run!
 
 <img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%201.png?raw=true">
 
 If the program has a difficult time finding reactnts, try another molecule and especially known molecules.
 
-<img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
+<img width="800" alt="interface guide 2" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
  
-<img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%203.png?raw=true">
+<img width="800" alt="interface guide 3" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%203.png?raw=true">
 
-<img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%204.png?raw=true">
+<img width="800" alt="interface guide 4" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%204.png?raw=true">
