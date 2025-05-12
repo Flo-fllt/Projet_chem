@@ -1,6 +1,6 @@
 import unittest
 
-# Function to test
+# Import Function to test
 from Package_functions.Interface_functions import smiles_to_fingerprint
 
 class TestSmilesToFingerprint(unittest.TestCase):
