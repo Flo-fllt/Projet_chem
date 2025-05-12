@@ -88,3 +88,9 @@ from Package_functions.Model_training_functions import prepare_fingerprints_for_
 from Package_functions.Interface_functions import (mol_to_high_quality_image, st_scaled_image, apply_template, predict_topk_templates, render_reaction_scheme)
 ````
 This will automatically install all the requirements and functions needed to run the code.
+
+## Guide
+<img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%201.png?raw=true">
+
+<img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
+
