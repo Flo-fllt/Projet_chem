@@ -2,17 +2,18 @@
 
 # -         RetroChem       -                                                                                                                                                                                   
 
-## Package information
-RetroChem, is a one-step retrosynthesis engine python package, which is based on SMILES inputs. It includes tools for model training, template preprocessing, and visualization of reaction predictions. Developped as part of a project for the practical Programming in Chemistry at EPFL (2025). 
+## 📜 Package information
+RetroChem, is a one-step retrosynthesis engine pip installable python package, which is based on SMILES inputs. It includes tools for model training, template preprocessing, and visualization of reaction predictions. Developped as part of a project for the practical Programming in Chemistry at EPFL (2025). 
 
 [![EPFL Course](https://img.shields.io/badge/EPFL-red?style=for-the-badge)](https://edu.epfl.ch/coursebook/en/practical-programming-in-chemistry-CH-200)
 
 ### 🪄 Features
 
-- Draw molecules or use molecule name (eg. paracetamol)
-- Works well for known molecules (eg. GHB, EDTA and etc)
-- Predicts possible reactants and reaction steps 
-- Gives clean structures with reaction steps
+- Simple to use retrosynthesis engine. 
+- Draw molecules or use molecule name (eg. paracetamol).
+- Gives clean and chemically correct molecules.
+- Works well for known molecules (eg. GHB, EDTA and etc).
+- Predicts possible reactants and reaction steps.
 - Gives the predictions in order of confidence
 
 ### 👥 Contributors
@@ -35,7 +36,10 @@ View code frequency : [Code frequency on GitHub](https://github.com/Flo-fllt/Pro
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B.svg?&style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/) 
 [![Anaconda](https://img.shields.io/badge/Anaconda-44A833.svg?&style=for-the-badge&logo=anaconda&logoColor=white)](https://www.anaconda.com/)
 
-### 🧪 Retrosynthesis, what is it?
+[![Made_with_python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+
+### 🔍 Retrosynthesis, what is it?
 Organic retrosynthesis is a problem-solving technique used in organic chemistry to design a synthetic route for a target molecule by breaking it down into simpler precursor structures. This process, known as retrosynthetic analysis, helps chemists plan the step-by-step synthesis of complex organic compounds by working backward from the desired product.
 
 #### The approach involves two main stages:
@@ -58,6 +62,9 @@ The theoretical underpinning of retrosynthesis often involves mapping the retros
 
 Let us now walk through how to apply retrosynthetic analysis to a real molecule using this framework!
 ## 🕹️ How to install it
+PYPI page of the RetroChem package:
+
+[![RetroChem.PYPI](https://img.shields.io/badge/pypi-3775A9?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/RetroChem/)
 
 Firstly it is advised to create a CONDA environment:
 ```bash or terminal
@@ -71,26 +78,50 @@ conda activate env.name
 #Alternative way of activating it
 source activate env.name
 ````
-Clone this repository and install the package locally:
+Clone this repository and install the python package locally:
 
 ```bash or terminal
 #Clone the repository
 git clone https://github.com/Flo-fllt/RetroChem.git
 
-#Naviguate to the package folder
-cd Projet_chem/Package_retrosynth
+#Naviguate to the RetroChem folder
+cd RetroChem
 
 #Install the package locally in editable mode, make sure to activate your environment before doing so
-pip install -e .
+pip install retrochem
 
-#This will install the retrosynth package on your machine. You can now import and use its functions anywhere in your Python environment:
-from Package_functions.Model_training_functions import prepare_fingerprints_for_training
-from Package_functions.Interface_functions import (mol_to_high_quality_image, st_scaled_image, apply_template, predict_topk_templates, render_reaction_scheme)
+#This will install the retrosynth package on your machine. You can then run the program by running:
+retrochem
 ````
 This will automatically install all the requirements and functions needed to run the code.
+## 💡 Requirements
+````
+python>=3.10
+streamlit
+pandas
+numpy
+joblib
+rdkit
+scikit-learn
+matplotlib
+pillow
+streamlit-ketcher
+````
 
-## Guide
+## 💻 Guide
+Once the RetroChem web page is open the retrosynthesis engine is ready to run!
+
 <img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%201.png?raw=true">
 
-<img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
+If the program has a difficult time finding reactnts, try another molecule and especially known molecules.
+
+<img width="800" alt="interface guide 2" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
+ 
+<img width="800" alt="interface guide 3" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%203.png?raw=true">
+
+<img width="800" alt="interface guide 4" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%204.png?raw=true">
+
+## 📚 Want more information?
+
+Here is the link to the report of the project, logging detailed information regarding the functions and data used to efficiently run this program. [![Jupyter Notebook](https://img.shields.io/badge/Jupyter_Notebook-orange.svg)](https://github.com/Flo-fllt/RetroChem/blob/main/Notebook/project_report.ipynb)
 
