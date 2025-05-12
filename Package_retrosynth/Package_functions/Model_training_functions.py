@@ -30,9 +30,9 @@ def split_rxn_smiles(rxn_smiles):
         return [], []
     
 # --- 3. Convert SMILES to fingerprints (after cleaning) ---
-def smiles_to_fingerprints(smiles):
+def smiles_to_fingerprints(rxn_smiles):
     try:
-        reactants_smiles, products_smiles = split_rxn_smiles(smiles)
+        reactants_smiles, products_smiles = split_rxn_smiles(rxn_smiles)
 
         def mols_to_fps(smiles_list):
             fps = []
@@ -58,7 +58,7 @@ def smiles_to_fingerprints(smiles):
         return reactants_fps, products_fps
 
     except Exception as e:
-        print(f"Erreur parsing SMILES: {smiles} -> {e}")
+        print(f"Erreur parsing SMILES: {rxn_smiles} -> {e}")
         return [], []
 
 # --- 4. Prepare training data X, y ---
