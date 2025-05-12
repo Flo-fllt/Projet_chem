@@ -1,4 +1,6 @@
-include .streamlit/config.toml
+include README.md
+include LICENSE
+recursive-include .streamlit *
 recursive-include Images *
 recursive-include Model *
-recursive-include Scripts *
+recursive-include Package_retrosynth *.py

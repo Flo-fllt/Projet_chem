@@ -26,7 +26,7 @@ def split_rxn_smiles(rxn_smiles):
         products = products_raw.split(".")
         return reactants, products
     except Exception as e:
-        print(f"Erreur dans split_rxn_smiles: {rxn_smiles} -> {e}")
+        print(f"Erreur dans split_rxn_smiles: {rxn_smiles} -> {e}") 
         return [], []
     
 # --- 3. Convert SMILES to fingerprints (after cleaning) ---
