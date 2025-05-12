@@ -17,3 +17,7 @@ dist/
 # Environnements virtuels
 venv/
 env/
+
+# Coverage reports
+.coverage
+htmlcov/
