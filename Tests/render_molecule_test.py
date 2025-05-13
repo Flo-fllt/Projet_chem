@@ -1,7 +1,7 @@
 import unittest
 from PIL import Image
 
-from Package_retrosynth.Package_functions.Interface_functions import render_molecule
+from RetroChem.Package_functions.Interface_functions import render_molecule
 
 class TestRenderMolecule(unittest.TestCase):
     def test_valid_smiles(self):

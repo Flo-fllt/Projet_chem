@@ -1,7 +1,7 @@
 import unittest
 
 # Import Function under test
-from Package_retrosynth.Package_functions.Model_training_functions import split_rxn_smiles
+from RetroChem.Package_functions.Model_training_functions import split_rxn_smiles
 
 class TestSplitRxnSmiles(unittest.TestCase):
     def test_valid_reaction(self):

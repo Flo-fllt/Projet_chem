@@ -1,7 +1,7 @@
 import unittest
 
 # Import function under test
-from Package_retrosynth.Package_functions.Interface_functions import apply_template
+from RetroChem.Package_functions.Interface_functions import apply_template
 
 class TestApplyTemplate(unittest.TestCase):
     def test_valid_reaction(self):

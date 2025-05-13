@@ -1,7 +1,7 @@
 import unittest
 
 # Function under test
-from Package_retrosynth.Package_functions.Model_training_functions import remove_atom_mapping
+from RetroChem.Package_functions.Model_training_functions import remove_atom_mapping
 
 class TestRemoveAtomMapping(unittest.TestCase):
     def test_removes_atom_mappings(self):

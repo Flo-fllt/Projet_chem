@@ -1,7 +1,7 @@
 import unittest
 
 # Import function under test
-from Package_retrosynth.Package_functions.Model_training_functions import smiles_to_fingerprints
+from RetroChem.Package_functions.Model_training_functions import smiles_to_fingerprints
 
 class TestSmilesToFingerprints(unittest.TestCase):
     def test_valid_reaction(self):

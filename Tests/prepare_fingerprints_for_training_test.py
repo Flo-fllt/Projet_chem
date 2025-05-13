@@ -2,7 +2,7 @@ import unittest
 import pandas as pd
 
 #Import function under test 
-from Package_retrosynth.Package_functions.Model_training_functions import prepare_fingerprints_for_training
+from RetroChem.Package_functions.Model_training_functions import prepare_fingerprints_for_training
 
 class TestPrepareFingerprints(unittest.TestCase):
 

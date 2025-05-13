@@ -1,7 +1,7 @@
 import unittest
 
 # Import function to test
-from Package_retrosynth.Package_functions.Interface_functions import render_reaction_scheme
+from RetroChem.Package_functions.Interface_functions import render_reaction_scheme
 
 class TestRenderReactionScheme(unittest.TestCase):
     def test_output_contains_html(self):
