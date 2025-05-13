@@ -91,10 +91,10 @@ cd RetroChem
 #Install the package locally in editable mode, make sure to activate your environment before doing so
 pip install retrochem
 
-#This will install the retrosynth package on your machine. You can then run the program by running:
+#This will install the retrosynth package on your machine. You can now run the program with:
 retrochem
 ````
-This will automatically install all the requirements and functions needed to run the code.
+The streamlit web page for RetroChem will be opened on your default browser.
 ## 💡 Requirements
 ````
 python>=3.10
@@ -121,6 +121,10 @@ If the program has a difficult time finding reactnts, try another molecule and e
 <img width="800" alt="interface guide 3" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%203.png?raw=true">
 
 <img width="800" alt="interface guide 4" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%204.png?raw=true">
+
+## 🛟 Need help?
+
+
 
 ## 🤖 How to train our model
 
