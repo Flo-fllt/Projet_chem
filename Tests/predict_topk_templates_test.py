@@ -1,7 +1,7 @@
 import unittest
 
 # import function under test
-from Package_functions.Interface_functions import predict_topk_templates
+from Package_retrosynth.Package_functions.Interface_functions import predict_topk_templates
 
 class TestPredictTopKTemplates(unittest.TestCase):
     def test_valid_smiles_prediction(self):

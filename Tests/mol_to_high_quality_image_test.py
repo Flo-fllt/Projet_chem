@@ -3,7 +3,7 @@ from rdkit import Chem
 from PIL import Image
 
 # Import function under test
-from Package_functions.Interface_functions import mol_to_high_quality_image
+from Package_retrosynth.Package_functions.Interface_functions import mol_to_high_quality_image
 
 class TestMolToHighQualityImage(unittest.TestCase):
     def test_image_output(self):

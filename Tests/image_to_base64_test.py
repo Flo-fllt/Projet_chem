@@ -2,7 +2,7 @@ import unittest
 from PIL import Image
 
 # Import Function under test
-from Package_functions.Interface_functions import image_to_base64
+from Package_retrosynth.Package_functions.Interface_functions import image_to_base64
 
 class TestImageToBase64(unittest.TestCase):
     def test_valid_image(self):
