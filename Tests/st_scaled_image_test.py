@@ -2,7 +2,7 @@ import unittest
 from PIL import Image
 
 #import function under test 
-from Package_functions.Interface_functions import st_scaled_image
+from Package_retrosynth.Package_functions.Interface_functions import st_scaled_image
 
 class TestStScaledImage(unittest.TestCase):
     def test_valid_image_display(self):

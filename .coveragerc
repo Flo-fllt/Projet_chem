@@ -1,6 +1,6 @@
 # .coveragerc
 [run]
-source = Package_functions
+source = Package_retrosynth.Package_functions
 
 [report]
 omit =

@@ -1,7 +1,7 @@
 import unittest
 
 # Import Function to test
-from Package_functions.Interface_functions import smiles_to_fingerprint
+from Package_retrosynth.Package_functions.Interface_functions import smiles_to_fingerprint
 
 class TestSmilesToFingerprint(unittest.TestCase):
     def test_valid_smiles(self):
