@@ -18,8 +18,8 @@ import pandas as pd
 import importlib.resources as pkg_resources
 from pathlib import Path
 import io
-import Package_retrosynth.Model as model_pkg
-import Package_retrosynth.Data as data_pkg
+import RetroChem.Model as model_pkg
+import RetroChem.Data as data_pkg
 
 
 # --- Helper functions ---

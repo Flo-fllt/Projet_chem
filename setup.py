@@ -7,12 +7,12 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="RetroChem",
-    version="0.1.8",    
+    version="0.1.11",   
     author="Jacques Grandjean, Noah Paganuzzi, Florian Follet, Giulio Garotti",
     description="Retrosynthesis, visualization and machine learning tools",
     long_description=long_description,
     long_description_content_type="text/markdown", 
-    packages=find_packages(include=["Package_retrosynth", "Package_retrosynth.*"]),
+    packages=find_packages(include=["RetroChem", "Retrochem.*"]),
     py_modules=["retrochem_launcher"],  # pour la commande CLI
     include_package_data=True,          # pour inclure les fichiers non-Python
     install_requires=[
