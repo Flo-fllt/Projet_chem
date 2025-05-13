@@ -124,7 +124,22 @@ If the program has a difficult time finding reactnts, try another molecule and e
 
 ## 🛟 Need help?
 
+If for some reason the program does not work or an issue occurs during the search of retrosynthesis templates there are a few steps you can take to ensure everything is in order.
 
+First make sure that you are in the correct environment
+
+Second check that you have the latest version of RetroChem
+```` bash or terminal
+#Shows you which version of retrochem you are using
+pip show retrochem
+
+#Updates the package
+pip install --upgrade retrochem
+
+#If the issue persists try uninstalling the package, then installing it again with the latest version specified
+pip uninstall retrochem
+pip install retrochem==x.x.x #change the x.x.x to the correct version
+````
 
 ## 🤖 How to train our model
 
