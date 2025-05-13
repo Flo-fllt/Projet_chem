@@ -122,6 +122,10 @@ If the program has a difficult time finding reactnts, try another molecule and e
 
 <img width="800" alt="interface guide 4" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%204.png?raw=true">
 
+## 🤖 How to train our model
+
+
+
 ## 📚 Want more information?
 
 Here is the link to the report of the project, logging detailed information regarding the functions and data used to efficiently run this program. [![Jupyter Notebook](https://img.shields.io/badge/Jupyter_Notebook-orange.svg)](https://github.com/Flo-fllt/RetroChem/blob/main/Notebook/project_report.ipynb)
