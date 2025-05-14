@@ -126,9 +126,29 @@ If the program has a difficult time finding reactnts, try another molecule and e
 
 If for some reason the program does not work or an issue occurs during the search of retrosynthesis templates there are a few steps you can take to ensure everything is in order.
 
-First make sure that you are in the correct environment
+First make sure that you are in the correct environment where you installed the package: 
+```` bash or terminal
+#Show what current environnement you are in
+which python
+````
 
-Second check that you have the latest version of RetroChem
+If not: 
+```` bash or terminal
+#Activate your environnement
+conda activate env.name
+````
+
+Then naviguate to Retrochem: 
+```` bash or terminal
+cd retrochem
+
+#You can check your current directory by running:
+pwd
+
+#the directory should end with /retrochem
+````
+
+Thirdly check that you have the latest version of RetroChem
 ```` bash or terminal
 #Shows you which version of retrochem you are using
 pip show retrochem
