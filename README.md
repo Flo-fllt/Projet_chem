@@ -168,6 +168,9 @@ pip install --upgrade pip
 #For Linux/MacOS
 python3 -m pip install --upgrade pip
 ````
+For questions on how to set-up/download the necesseties (ANACONDA and etc) we welcome you to take a look at this:
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/schwallergroup/practical-programming-in-chemistry-exercises/tree/main/Lecture01)
 
 ## 🤖 How to train our model
 
