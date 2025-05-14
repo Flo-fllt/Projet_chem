@@ -160,6 +160,14 @@ pip install --upgrade retrochem
 pip uninstall retrochem
 pip install retrochem==x.x.x #change the x.x.x to the correct version
 ````
+If for some reason the issue is not resolved, it may derive from a pip issue, in this case checking for a pip update may solve it:
+````
+#For a virtual environment
+pip install --upgrade pip
+
+#For Linux/MacOS
+python3 -m pip install --upgrade pip
+````
 
 ## 🤖 How to train our model
 
