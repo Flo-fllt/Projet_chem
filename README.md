@@ -172,9 +172,35 @@ For questions on how to set-up/download the necesseties (ANACONDA and etc) we we
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/schwallergroup/practical-programming-in-chemistry-exercises/tree/main/Lecture01)
 
-## 🤖 How to train our model
+## 🤖 How to retrain our model
 
+To retrain the retrosynthesis prediction model, use the notebook located in:
+````
+retrain_model/Train_model.ipynb
+````
+By default, this notebook is configured to work with the original USPTO-50K dataset.
 
+1. Retrain with the default dataset
+   - Simply run the two cell blocks in the notebook:
+   - The first one combines the three original datasets (train, valid, and test) into one file.
+   - The second cell block loads the combined file, retrains the model, and saves:
+````
+retrain_model/new_mlp_classifier_model.pkl
+retrain_model/new_scaler.pkl
+retrain_model/new_label_encoder.pkl
+````
+2. Retrain with your own data (not recommended)
+   - Skip the first cell block
+   - Update the file path in the second cell block:
+````  
+# Replace this path with your own
+combined_file_path = os.path.join(data_dir, "your_data.csv")
+````
+   - Ensure your CSV includes the following required columns:
+````
+RxnSmilesClean, PseudoHash, RetroTemplate, TemplateHash
+````
+Disclaimer: Retraining with custom data is not recommended unless you are familiar with the dataset structure and preprocessing requirements. The model was trained with curated USPTO-50K data, and using inconsistent or improperly formatted data may lead to poor performance or errors.
 
 ## 📚 Want more information?
 
