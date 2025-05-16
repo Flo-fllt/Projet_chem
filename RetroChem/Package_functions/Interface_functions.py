@@ -32,11 +32,14 @@ def smiles_to_fingerprint(smiles, radius=2, n_bits=2048):
     DataStructs.ConvertToNumpyArray(fp, arr)
     return arr
 
-def render_molecule(smiles):
-    mol = Chem.MolFromSmiles(smiles)
-    if mol:
-        return mol_to_high_quality_image(mol)
-    return None
+def mol_to_high_quality_image(mol, size=(800, 800)):
+    drawer = rdMolDraw2D.MolDraw2DCairo(*size)
+    opts = drawer.drawOptions()
+    opts.bondLineWidth = 2.0
+    drawer.DrawMolecule(mol)
+    drawer.FinishDrawing()
+    png = drawer.GetDrawingText()
+    return Image.open(BytesIO(png))
 
 def image_to_base64(img, width=350):
     buffer = BytesIO()
@@ -48,15 +51,13 @@ def image_to_base64(img, width=350):
     </div>
     '''
 
-# --- High quality molecule drawing ---
-def mol_to_high_quality_image(mol, size=(800, 800)):
-    drawer = rdMolDraw2D.MolDraw2DCairo(*size)
-    opts = drawer.drawOptions()
-    opts.bondLineWidth = 2.0
-    drawer.DrawMolecule(mol)
-    drawer.FinishDrawing()
-    png = drawer.GetDrawingText()
-    return Image.open(BytesIO(png))
+# --- return a molecule ---
+def render_molecule(smiles):
+    mol = Chem.MolFromSmiles(smiles)
+    if mol:
+        return mol_to_high_quality_image(mol)
+    return None
+
 
 # --- Display scaled image ---
 def st_scaled_image(image, width_display_px=200):
