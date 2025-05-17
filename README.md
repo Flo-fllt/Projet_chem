@@ -70,8 +70,8 @@ PYPI page of the RetroChem package:
 Firstly it is advised to create a CONDA environment:
 ```bash or terminal
 #Open bash or terminal
-#Name the environment as you wish
-conda create -n env.name
+#Name the environment as you wish and specify python 3.10
+conda create -n env.name python==3.10
 
 #Activate your environment
 conda activate env.name
@@ -134,18 +134,22 @@ which python
 
 If not: 
 ```` bash or terminal
-#Activate your environnement
+#Activate the environnement where you downloaded the retrochem package
 conda activate env.name
 ````
 
-Then naviguate to Retrochem: 
+Then navigate to the top-level RetroChem repository folder: 
 ```` bash or terminal
 cd retrochem
 
-#You can check your current directory by running:
+# Confirm your current location
 pwd
 
-#the directory should end with /retrochem
+# It should end with: /your/path/to/retrochem
+````
+❗️ Warning: If your path ends in /retrochem/retrochem, you are one level too deep, go back using:
+```` bash or terminal
+cd ..
 ````
 
 Thirdly check that you have the latest version of RetroChem
