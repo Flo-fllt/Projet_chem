@@ -114,7 +114,7 @@ Once the RetroChem web page is open the retrosynthesis engine is ready to run!
 
 <img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%201.png?raw=true">
 
-If the program has a difficult time finding reactnts, try another molecule and especially known molecules.
+If the program has a difficult time finding reactants, try another molecule and especially known molecules.
 
 <img width="800" alt="interface guide 2" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
  
