@@ -114,7 +114,7 @@ Once the RetroChem web page is open the retrosynthesis engine is ready to run!
 
 <img width="800" alt="interface guide 1" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%201.png?raw=true">
 
-If the program has a difficult time finding reactnts, try another molecule and especially known molecules.
+If the program has a difficult time finding reactants, try another molecule and especially known molecules.
 
 <img width="800" alt="interface guide 2" src="https://github.com/Flo-fllt/RetroChem/blob/main/Images/Interface%20guide%202.png?raw=true">
  
@@ -162,8 +162,10 @@ pip install --upgrade retrochem
 
 #If the issue persists try uninstalling the package, then installing it again with the latest version specified
 pip uninstall retrochem
-pip install retrochem==x.x.x #change the x.x.x to the correct version
+pip install retrochem==x.x.x #change the x.x.x to the current version (check PyPi page below)
 ````
+You can compare the version you have downloaded to that of the newest available version, which can be found on the PiPy page: https://pypi.org/project/RetroChem/
+
 If for some reason the issue is not resolved, it may derive from a pip issue, in this case checking for a pip update may solve it:
 ````
 #For a virtual environment
