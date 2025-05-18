@@ -209,7 +209,7 @@ Disclaimer: Retraining with custom data is not recommended unless you are famili
 
 ## 📚 Want more information?
 
-Here is the link to the report of the project, logging detailed information regarding the functions and data used to efficiently run this program. [![Jupyter Notebook](https://img.shields.io/badge/Jupyter_Notebook-orange.svg)](https://github.com/Flo-fllt/RetroChem/blob/main/Notebook/project_report.ipynb)
+Here is the link to the report of the project, logging detailed information regarding the model we used and how it was trained along with the general context of this project. [![Jupyter Notebook](https://img.shields.io/badge/Jupyter_Notebook-orange.svg)](https://github.com/Flo-fllt/RetroChem/blob/main/Notebook/project_report.ipynb)
 
 ## 🕺Your turn!
 
