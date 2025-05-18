@@ -164,7 +164,7 @@ pip install --upgrade retrochem
 pip uninstall retrochem
 pip install retrochem==x.x.x #change the x.x.x to the current version (check PyPi page below)
 ````
-You can then compare the version you have downloaded to that of the newest available version, which can be found on the PiPy page: https://pypi.org/project/RetroChem/
+You can compare the version you have downloaded to that of the newest available version, which can be found on the PiPy page: https://pypi.org/project/RetroChem/
 
 If for some reason the issue is not resolved, it may derive from a pip issue, in this case checking for a pip update may solve it:
 ````
