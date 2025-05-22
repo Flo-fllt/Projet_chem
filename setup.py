@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="RetroChem",
-    version="0.1.11",   
+    version="0.2.0",   
     author="Jacques Grandjean, Noah Paganuzzi, Florian Follet, Giulio Garotti",
     description="Retrosynthesis, visualization and machine learning tools",
     long_description=long_description,
@@ -18,7 +18,7 @@ setup(
     install_requires=[
         "streamlit",
         "pandas",
-        "numpy",
+        "numpy==2.2.6",
         "joblib",
         "rdkit",
         "scikit-learn",
