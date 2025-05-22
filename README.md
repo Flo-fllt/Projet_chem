@@ -97,7 +97,7 @@ The streamlit web page for RetroChem will be opened on your default browser.
 python>=3.10
 streamlit
 pandas
-numpy
+numpy==2.2.6
 joblib
 rdkit
 scikit-learn
@@ -166,14 +166,6 @@ pip install retrochem==x.x.x #change the x.x.x to the current version (check PyP
 You can compare the version you have downloaded to that of the newest available version, which can be found on the PiPy page: 
 
 [![RetroChem.PYPI](https://img.shields.io/badge/pypi-3775A9?style=for-the-badge&logo=pypi&logoColor=white)](https://pypi.org/project/RetroChem/)
-
-
-If the interface runs smoothly but when you try to run the retrosynthesis, a numpy error arises: 
-(i.e : ⚠️ Error: No module named 'numpy._core')
-````
-#Update numpy to the compatible version
-pip install numpy==2.2.6
-````
 
 If for some reason the issue is not resolved, it may derive from a pip issue, in this case checking for a pip update may solve it:
 ````
